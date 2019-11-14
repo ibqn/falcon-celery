@@ -1,14 +1,14 @@
 # base image
-FROM python:3.6.8-alpine
+FROM python:3.6-alpine
+
+RUN mkdir -p /srv
 
 # set working directory
-WORKDIR /usr/src/app
+WORKDIR /srv
 
 # add requirements
-COPY ./requirements.txt /usr/src/app/requirements.txt
+COPY ./requirements.txt /srv/requirements.txt
 
 # install requirements
-RUN pip install -r requirements.txt
-
-# add app
-COPY . /usr/src/app
+RUN pip install --upgrade pip setuptools && \
+    pip install --upgrade --requirement requirements.txt

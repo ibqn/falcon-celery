@@ -1,0 +1,5 @@
+# switch to pre-release due to issue 6579
+docker-compose==1.25.0-rc4
+httpie
+
+# docker-compose

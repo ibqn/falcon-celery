@@ -40,8 +40,17 @@ class CheckStatus(object):
         resp.body = json.dumps(result)
 
 
+class Index(object):
+    def on_get(self, req, resp):
+        resp.status = falcon.HTTP_200
+        resp.body = (
+            'index page!'
+        )
+
+
 app = falcon.API()
 
+app.add_route('/', Index())
 app.add_route('/ping', Ping())
 app.add_route('/create', CreateTask())
 app.add_route('/status/{task_id}', CheckStatus())
