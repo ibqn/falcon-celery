@@ -4,3 +4,4 @@ flower
 # due to https://github.com/benoitc/gunicorn/issues/2160
 gunicorn==19.9.0
 redis
+sympy
