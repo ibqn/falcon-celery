@@ -1,6 +1,7 @@
 #!/bin/sh
 
-if [ ! -z $DEBUG ]; then
+if [[ ! -z $DEBUG ]]
+ then
     RELOAD="--reload"
 else
     RELOAD=""
@@ -10,4 +11,4 @@ exec gunicorn app:app \
     --bind 0.0.0.0:8000 \
     --access-logfile=- \
     --workers 2 \
-    "${RELOAD}"
+    ${RELOAD}
